@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Birthday</title>
+<style>
+header
+{
+background-color:aquamarine;
+text-align:center;
+color:mediumorchid;
+padding:20px;
+}
+nav
+{
+background-color:tomato;
+text-align:center;
+padding:5px;
+}
+nav a
+{
+text-decoration:none;
+color:white;
+margin:20px;
+font-weight:bold;
+}
+
+section
+{
+padding:20px;
+margin:20px;
+}
+
+/* Surprise button */
+#surpriseBtn
+{
+background-color:gold;
+color:black;
+font-size:18px;
+font-weight:bold;
+padding:10px 20px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+}
+#surpriseBtn:hover
+{
+background-color:orange;
+}
+
+/* Message that appears after clicking the button */
+#surpriseBox
+{
+display:none;
+text-align:center;
+background-color:lightyellow;
+border:3px dashed tomato;
+padding:20px;
+margin:20px;
+font-size:22px;
+}
+
+/* Floating balloons */
+.balloon
+{
+position:fixed;
+bottom:-60px;
+font-size:40px;
+animation:floatUp 5s linear forwards;
+}
+@keyframes floatUp
+{
+to { bottom:110%; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Theertha Turns 8</h1>
+<h3>Happy Birthday Dear</h3>
+<button id="surpriseBtn" onclick="showSurprise()">🎁 Click for a Surprise!</button>
+</header>
+
+<div id="surpriseBox">
+🎉 Happy 8th Birthday, Theertha! 🎉<br>
+You are loved so much. Make a wish! 🎂✨
+</div>
+
+<nav>
+<a href="#about">About</a>
+<a href="#details">Event Details</a>
+<a href="#gallery">Gallery</a>
+<a href="#location">Location</a>
+</nav>
+
+<section id="about">
+<h1>About</h1>
+<p>Celebrate Theertha's 8th Birthday.
+Join us for an unforgettable evening filled with music, games, delicious food, and exciting surprises. Let's create wonderful memories together!</p>
+
+<p>The birthday celebration includes fun games, live music, cake cutting, dinner, and exciting gifts for everyone. Dress in your favorite party outfit and enjoy the evening.</p>
+
+<h2>Event Highlights</h2>
+🎈 Balloon Decoration<br>
+🎂 Cake Cutting Ceremony<br>
+🎵 Live DJ Music<br>
+🎁 Surprise Gifts<br>
+🍕 Dinner Buffet
+
+<h2>Event Flow</h2>
+Guest Welcome<br>
+Games &amp; Fun Activities<br>
+Cake Cutting<br>
+Dinner<br>
+Dance Party
+</section>
+
+<section id="details">
+<h1>Event Details</h1>
+<p>Celebrate Theertha's 8th Birthday.
+Join us for an unforgettable evening filled with music, games, delicious food, and exciting surprises.</p>
+
+<table border="1">
+<tr>
+<th>Time</th>
+<th>Activity</th>
+</tr>
+<tr>
+<td>6.00pm</td>
+<td>Welcome</td>
+</tr>
+<tr>
+<td>6.50pm</td>
+<td>Cake cutting</td>
+</tr>
+<tr>
+<td>7.00pm</td>
+<td>Photo session</td>
+</tr>
+<tr>
+<td>7.10pm onwards</td>
+<td>Dinner</td>
+</tr>
+</table>
+</section>
+
+<section id="gallery">
+<h1>Event Gallery</h1>
+<table>
+<tr>
+<td>
+<figure>
+<img src="home.jpg" width="350" height="150" alt="1st Birthday">
+<figcaption>1st Birthday</figcaption>
+</figure>
+</td>
+</tr>
+</table>
+</section>
+
+<section id="location">
+<h1>Location</h1>
+<p>Venue: (add the party venue and address here)</p>
+</section>
+
+<script>
+// This function runs when the Surprise button is clicked
+function showSurprise()
+{
+  // Show the birthday message
+  document.getElementById("surpriseBox").style.display = "block";
+
+  // Make 20 balloons and party emojis float up the screen
+  var items = ["🎈", "🎉", "🎁", "🎂", "🎊"];
+  for (var i = 0; i < 20; i++)
+  {
+    var b = document.createElement("span");
+    b.className = "balloon";
+    b.innerHTML = items[i % 5];
+    b.style.left = (i * 5) + "%";
+    b.style.animationDelay = (i * 0.2) + "s";
+    document.body.appendChild(b);
+  }
+}
+</script>
+
+</body>
+</html>
